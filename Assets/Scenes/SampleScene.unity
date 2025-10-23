@@ -131,8 +131,8 @@ GameObject:
   - component: {fileID: 154757973}
   - component: {fileID: 154757972}
   - component: {fileID: 154757971}
-  - component: {fileID: 154757975}
   - component: {fileID: 154757976}
+  - component: {fileID: 154757977}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -232,19 +232,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &154757975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154757970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c05fd8bd9200749a623c510758ab2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fields
-  PlayerHealth: 0
 --- !u!54 &154757976
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -255,7 +242,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -272,6 +259,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &154757977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154757970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2734fa38c0f614ba3a92c2ef584138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Properties
 --- !u!1 &1863111276
 GameObject:
   m_ObjectHideFlags: 0
