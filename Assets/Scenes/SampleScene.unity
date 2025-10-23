@@ -132,7 +132,9 @@ GameObject:
   - component: {fileID: 154757972}
   - component: {fileID: 154757971}
   - component: {fileID: 154757976}
+  - component: {fileID: 154757979}
   - component: {fileID: 154757977}
+  - component: {fileID: 154757978}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -266,11 +268,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154757970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b2734fa38c0f614ba3a92c2ef584138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Properties
+--- !u!114 &154757978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154757970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52697debb6b7c124a88cc406f2c96117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Methods
+--- !u!114 &154757979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154757970}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c05fd8bd9200749a623c510758ab2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fields
+  _playerHealthSerializeField: 100
 --- !u!1 &1863111276
 GameObject:
   m_ObjectHideFlags: 0
