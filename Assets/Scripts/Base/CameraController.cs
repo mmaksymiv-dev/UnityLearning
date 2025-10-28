@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private float moveSpeed = 10f;
-    private float sprintMultiplier = 2f;
-    private float rotationSpeed = 100f;
-    private float zoomSpeed = 50f;
-    private float minHeight = -20f;
-    private float maxHeight = 30f;
+    private float _moveSpeed = 10f;
+    private float _sprintMultiplier = 2f;
+    private float _rotationSpeed = 100f;
+    private float _zoomSpeed = 50f;
+    private float _minHeight = -20f;
+    private float _maxHeight = 30f;
     private float _currentSpeed;
 
     private void Update()
@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
         float ver = Input.GetAxis("Vertical");
 
         bool isSprinting = Input.GetKey(KeyCode.LeftShift);
-        _currentSpeed = moveSpeed * (isSprinting ? sprintMultiplier : 1f);
+        _currentSpeed = _moveSpeed * (isSprinting ? _sprintMultiplier : 1f);
 
         Vector3 move = new Vector3(hor, 0f, ver);
         transform.Translate(move * _currentSpeed * Time.deltaTime, Space.Self);
@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.Q)) rotate -= 1f;
         if (Input.GetKey(KeyCode.E)) rotate += 1f;
 
-        transform.Rotate(Vector3.up, rotate * rotationSpeed * Time.deltaTime, Space.World);
+        transform.Rotate(Vector3.up, rotate * _rotationSpeed * Time.deltaTime, Space.World);
     }
 
     private void HandleZoom()
@@ -44,14 +44,14 @@ public class CameraController : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (Mathf.Abs(scroll) > 0.001f)
         {
-            transform.position += transform.up * scroll * zoomSpeed * Time.deltaTime;
+            transform.position += transform.up * scroll * _zoomSpeed * Time.deltaTime;
         }
     }
 
     private void ClampHeight()
     {
         Vector3 pos = transform.position;
-        pos.y = Mathf.Clamp(pos.y, minHeight, maxHeight);
+        pos.y = Mathf.Clamp(pos.y, _minHeight, _maxHeight);
         transform.position = pos;
     }
 }
