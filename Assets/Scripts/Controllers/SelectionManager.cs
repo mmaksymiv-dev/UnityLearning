@@ -7,21 +7,22 @@ public class SelectionManager : MonoBehaviour
 
     private void Awake()
     {
-        _camera = Camera.main;
+        _camera = Camera.allCameras[0];
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
-            HandleClick();
+            TrySelect();
     }
-    private void HandleClick()
+
+    private void TrySelect()
     {
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            var selectable = hit.collider.GetComponent<SelectableObject>();
-            if (selectable != null)
+            
+            if (hit.collider.TryGetComponent<SelectableObject>(out var selectable))
                 Select(selectable);
             else
                 Deselect();
@@ -37,7 +38,7 @@ public class SelectionManager : MonoBehaviour
         _currentSelection = selectable;
         _currentSelection.OnSelect();
 
-        UIManager.Instance.ShowObjectMenu(_currentSelection);
+        UIManager.Instance.ShowMenu(_currentSelection);
     }
 
     private void Deselect()
@@ -47,6 +48,6 @@ public class SelectionManager : MonoBehaviour
 
         _currentSelection.OnDeselect();
         _currentSelection = null;
-        UIManager.Instance.HideObjectMenu();
+        UIManager.Instance.HideMenu();
     }
 }
